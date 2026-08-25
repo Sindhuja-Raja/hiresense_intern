@@ -1,0 +1,544 @@
+/**
+ * Interview Panel Styles
+ */
+
+.interview-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 100;
+}
+
+.api-key-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+.api-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+.api-input:focus {
+  border-color: #667eea;
+}
+
+.api-input::placeholder {
+  color: #888;
+}
+
+.api-button {
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: #667eea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.api-button:hover {
+  background: #5a6fd6;
+}
+
+.api-hint {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.start-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.conversation {
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 85%;
+}
+
+.message.assistant {
+  background: rgba(102, 126, 234, 0.3);
+  align-self: flex-start;
+  border-left: 3px solid #667eea;
+}
+
+.message.user {
+  background: rgba(76, 175, 80, 0.3);
+  align-self: flex-end;
+  border-right: 3px solid #4CAF50;
+}
+
+.message .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.message p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message .thinking {
+  color: #aaa;
+  font-style: italic;
+}
+
+.live-transcript {
+  background: rgba(255, 193, 7, 0.2);
+  border: 1px solid #FFC107;
+  border-radius: 8px;
+  padding: 10px 15px;
+  width: 100%;
+  color: #FFC107;
+  font-size: 14px;
+}
+
+.mic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.mic-button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.mic-button.listening {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+  animation: pulse 1.5s infinite;
+}
+
+.mic-button.disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.mic-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.mic-icon {
+  font-size: 20px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(244, 67, 54, 0.8);
+  }
+}
+
+.status {
+  height: 20px;
+  font-size: 14px;
+}
+
+.status-speaking {
+  color: #667eea;
+}
+
+.status-listening {
+  color: #4CAF50;
+}
+
+.error-message {
+  background: rgba(244, 67, 54, 0.2);
+  border: 1px solid #f44336;
+  border-radius: 10px;
+  padding: 15px;
+  color: #ffcdd2;
+  text-align: center;
+}
+
+/* Scrollbar styling */
+.conversation::-webkit-scrollbar {
+  width: 6px;
+}
+
+.conversation::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.conversation::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.conversation::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Start Screen Styles */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.start-screen h2 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.start-screen p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Role Selector */
+.role-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.role-selector label {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.role-selector select {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  background: rgba(102, 126, 234, 0.2);
+  color: white;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.role-selector select:hover {
+  border-color: #8a9bff;
+}
+
+.role-selector select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+/* Controls Container */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Evaluation Button */
+.eval-button {
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.eval-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.6);
+}
+
+.eval-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reset Button */
+.reset-button {
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+}
+
+/* Evaluation Card */
+.evaluation-card {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.evaluation-card.accept {
+  border-color: #4CAF50;
+}
+
+.evaluation-card.reject {
+  border-color: #f44336;
+}
+
+.evaluation-card.maybe {
+  border-color: #ff9800;
+}
+
+.evaluation-card h3 {
+  margin: 0 0 15px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Scores Grid */
+.scores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.score-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.score-item.overall {
+  grid-column: span 2;
+  background: rgba(102, 126, 234, 0.3);
+}
+
+.score-label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Verdict */
+.verdict {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.verdict.accept {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+}
+
+.verdict.reject {
+  background: rgba(244, 67, 54, 0.3);
+  color: #f44336;
+}
+
+.verdict.maybe {
+  background: rgba(255, 152, 0, 0.3);
+  color: #ff9800;
+}
+
+.feedback {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+/* Question Count */
+.question-count {
+  color: #888;
+  font-size: 12px;
+}
+
+/* Webcam Styles */
+.webcam-container {
+  position: relative;
+  width: 180px;
+  height: 135px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a2e;
+  border: 2px solid #333;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.webcam-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirror the video */
+  display: none;
+}
+
+.webcam-video.active {
+  display: block;
+}
+
+.webcam-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  gap: 5px;
+}
+
+.webcam-placeholder span {
+  font-size: 32px;
+}
+
+.webcam-placeholder p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.camera-toggle {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.camera-toggle.off {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.camera-toggle.on {
+  background: rgba(76, 175, 80, 0.8);
+}
+
+.camera-toggle:hover {
+  transform: scale(1.1);
+}
+
+.camera-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.camera-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(244, 67, 54, 0.9);
+  color: white;
+  font-size: 10px;
+  padding: 4px;
+  text-align: center;
+}

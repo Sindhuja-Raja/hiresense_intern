@@ -1,0 +1,59 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+env.production
+backend/env.production
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Lock files (keep package-lock.json but ignore bun.lockb)
+bun.lockb
+
+# Temp / utility scripts (not needed in repo)
+GIT_PUSH_AUTOMATION.ps1
+GIT_PUSH_STRATEGY.md
+MANUAL_PUSH_COMMANDS.ps1
+kill-port-5000.ps1
+backend/kill-port-5000.ps1
+nodemon-restart.txt
+backend/nodemon-restart.txt
+test-imports.ts
+backend/test-email.js
+backend/check-users.js
+backend/migrate-users.js
+
+# Internal dev notes (not needed in repo)
+DATABASE_DISCONNECTION.md
+DATABASE_SAFETY_REPORT.md
+DEMO_MODE_IMPLEMENTATION.md
+FIX_PROGRESS_UPDATE.md
+MONGODB_COMPASS_GUIDE.md
+PROJECT_ANALYSIS_QUICK_REFERENCE.md
+SIMPLIFIED_FEATURES.md
+COMPANY_CREDENTIALS.md
+COPILOT_REFERENCE.md

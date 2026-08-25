@@ -1,0 +1,122 @@
+/**
+ * ControlPanel Styles
+ * 
+ * Modern, clean styling for the gesture state control panel.
+ * Uses glassmorphism effect for a professional look.
+ */
+
+.control-panel {
+  /* Fixed positioning at the bottom of the screen */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 100;
+  
+  /* Center the content */
+  display: flex;
+  justify-content: center;
+}
+
+.control-panel-content {
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px 30px;
+  
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  
+  /* Subtle shadow for depth */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.control-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.state-button {
+  /* Button base styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.state-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.state-button.active {
+  background: rgba(74, 144, 217, 0.4);
+  border-color: #4a90d9;
+  box-shadow: 0 0 20px rgba(74, 144, 217, 0.3);
+}
+
+.button-emoji {
+  font-size: 24px;
+}
+
+.button-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.state-description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .control-panel-content {
+    padding: 15px 20px;
+  }
+  
+  .button-group {
+    gap: 8px;
+  }
+  
+  .state-button {
+    padding: 10px 16px;
+    min-width: 80px;
+  }
+  
+  .button-emoji {
+    font-size: 20px;
+  }
+  
+  .button-label {
+    font-size: 12px;
+  }
+}

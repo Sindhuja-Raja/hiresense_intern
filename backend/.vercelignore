@@ -1,0 +1,18 @@
+# Files to ignore during Vercel deployment
+node_modules
+.git
+.env
+.env.local
+.env.*.local
+*.log
+*.md
+test-*.js
+check-*.js
+migrate-*.js
+kill-port-*.ps1
+nodemon.json
+nodemon-restart.txt
+.DS_Store
+*.local
+src/**/*.test.ts
+src/**/*.spec.ts

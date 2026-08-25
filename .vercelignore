@@ -1,0 +1,14 @@
+# Files to ignore during Vercel deployment
+node_modules
+.git
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+*.local
+backend/
+HireSense/
+rpm-avatar/
+docs/
+test-*.ts
